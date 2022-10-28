@@ -1,0 +1,5 @@
+package com.vaccine.appointments.controllers;
+
+public class VaccineAppointmentController {
+
+}

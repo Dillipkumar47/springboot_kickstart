@@ -1,0 +1,38 @@
+package com.vaccine.appointments.service;
+
+import java.util.Arrays;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class AppointmentService {
+
+	private List <Appointments> appointments = Arrays.asList(new Appointments("dillip",new Vaccine("Moderna",1),"11-Jul-2022::11:30"),
+
+			new Appointments("soumik",new Vaccine("Moderna",1),"11-Jul-2022::11:30"),
+			new Appointments("harsit",new Vaccine("Moderna",1),"11-Jul-2022::11:30"),
+			new Appointments("ritu",new Vaccine("Moderna",1),"11-Jul-2022::11:30")
+
+			);
+
+
+	public List <Appointments> getAllAppointments() {
+		return appointments;
+
+	}
+
+	public Appointments getAppoinment(String name) {
+		
+		return appointments.stream().filter(t ->t.getName().equals(name)).findFirst().get();
+		
+	}
+	
+	
+
+
+}
+
+
